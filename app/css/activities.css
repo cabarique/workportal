@@ -1,0 +1,43 @@
+body{
+	background-color: #cccccc;
+	overflow: hidden;
+	margin: 0;
+}
+
+#div-logo{
+	margin-bottom: 20px;
+}
+
+.view-container {
+  position: relative;
+  width: 980px;
+  height: 100%;
+  display: block;
+  float: none;
+  margin: 0 auto;
+  color: white;
+}
+
+.activities{
+  background-color: #185891;
+  padding: 20px 10px;
+  border-radius: 3px;
+  min-height: 500px;
+  overflow-y: scroll;
+}
+
+.activities lh{
+	font-size: 16px;
+}
+
+.activities li{
+	padding: 5px;
+	list-style-type: none;
+	border: 1px solid blue;
+	margin-bottom: 10px;
+	background-color: white;
+	color: #393939;
+	border-radius: 3px;
+	
+	
+}
