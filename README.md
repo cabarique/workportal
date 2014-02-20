@@ -18,3 +18,6 @@ Descargar codigo
 ### Angular.js
 Ejecutar proyecto
 - node scripts/web-server.js
+
+### Visualizar
+Ingrese a su navegador favorito a la url http://localhost:8000/app/index.html
