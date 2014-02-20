@@ -6,13 +6,27 @@
   <div class="row-fluid">
     <div class="span4">
       <!--Sidebar content-->
-
+      
       <ul class="activities unset">
         <lh>Pendientes</lh>
-        <li ng-repeat="activitie in activities | filter:unset">
-          <span>Proceso: {{ activitie.process }}</span><br/>
-          <span>Solicitante: {{ activitie.employee }}</span><br/>
-          <span>Fecha: {{ activitie.requestDate }}</span>
+        <li ng-repeat="activitie in activities | filter:unset" ng-click="show = !show">
+          <div class="process">
+            <span>Proceso: <span class="act-respt pull-right">{{ activitie.process }}</span></span><br/>
+            <span>Solicitante: <span class="act-respt pull-right">{{ activitie.employee }}</span></span><br/>
+            <span>Fecha: <span class="act-respt pull-right">{{ activitie.requestDate }}</span></span>
+            <div class="process-details" ng-show="show">
+              <hr>
+              <span>Días solicitados: <span class="act-respt pull-right">{{ dateSub(activitie.beginDate, activitie.endDate) }}</span></span><br/>
+              <span>Fecha inicio: <span class="act-respt pull-right">{{ activitie.beginDate }}</span></span><br/>
+              <span>Fecha Fin: <span class="act-respt pull-right">{{ activitie.endDate }}</span></span><br/>
+              <div class="act-actions row-fluid">
+                <div class="pull-right">
+                  <button class="btn btn-success" ng-click="aceptar(activitie)">Aceptar</button>
+                  <button class="btn btn-danger" ng-click="rechazar(activitie)">Rechazar</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
 
@@ -22,10 +36,18 @@
 
       <ul class="activities approved">
         <lh>Autorizados</lh>
-        <li ng-repeat="activitie in activities | filter:approved">
-          <span>Proceso: {{ activitie.process }}</span><br/>
-          <span>Solicitante: {{ activitie.employee }}</span><br/>
-          <span>Fecha: {{ activitie.requestDate }}</span>
+        <li ng-repeat="activitie in activities | filter:approved" ng-click="show = !show">
+          <div class="process">
+            <span>Proceso: <span class="act-respt pull-right">{{ activitie.process }}</span></span><br/>
+            <span>Solicitante: <span class="act-respt pull-right">{{ activitie.employee }}</span></span><br/>
+            <span>Fecha: <span class="act-respt pull-right">{{ activitie.requestDate }}</span></span>
+            <div class="process-details" ng-show="show">
+              <hr>
+              <span>Días solicitados: <span class="act-respt pull-right">{{ dateSub(activitie.beginDate, activitie.endDate) }}</span></span><br/>
+              <span>Fecha inicio: <span class="act-respt pull-right">{{ activitie.beginDate }}</span></span><br/>
+              <span>Fecha Fin: <span class="act-respt pull-right">{{ activitie.endDate }}</span></span><br/>
+            </div>
+          </div>
         </li>
       </ul>
 
@@ -35,10 +57,18 @@
 
       <ul class="activities not-approved">
         <lh>No Autorizados</lh>
-        <li ng-repeat="activitie in activities | filter:notApproved">
-          <span>Proceso: {{ activitie.process }}</span><br/>
-          <span>Solicitante: {{ activitie.employee }}</span><br/>
-          <span>Fecha: {{ activitie.requestDate }}</span>
+        <li ng-repeat="activitie in activities | filter:notApproved" ng-click="show = !show">
+          <div class="process">
+            <span>Proceso: <span class="act-respt pull-right">{{ activitie.process }}</span></span><br/>
+            <span>Solicitante: <span class="act-respt pull-right">{{ activitie.employee }}</span></span><br/>
+            <span>Fecha: <span class="act-respt pull-right">{{ activitie.requestDate }}</span></span>
+            <div class="process-details" ng-show="show">
+              <hr>
+              <span>Días solicitados: <span class="act-respt pull-right">{{ dateSub(activitie.beginDate, activitie.endDate) }}</span></span><br/>
+              <span>Fecha inicio: <span class="act-respt pull-right">{{ activitie.beginDate }}</span></span><br/>
+              <span>Fecha Fin: <span class="act-respt pull-right">{{ activitie.endDate }}</span></span><br/>
+            </div>
+          </div>
         </li>
       </ul>
 
